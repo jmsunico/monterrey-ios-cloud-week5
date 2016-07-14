@@ -17,6 +17,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="0ZJ-Z5-gnY" kind="relationship" relationship="rootViewController" id="ncj-ZR-fmO"/>
+                        <segue destination="5aw-Jm-6Qa" kind="show" identifier="toTableView" id="Ilq-03-gzQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6E-sI-GP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdT-QW-7w2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="1389"/>
+            <point key="canvasLocation" x="-165" y="1377"/>
         </scene>
         <!--SearchISBN View Controller-->
         <scene sceneID="wzJ-WT-6aT">
@@ -244,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dtb-LA-gYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329" y="1389"/>
+            <point key="canvasLocation" x="887" y="1377"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="CI8-PC-ejJ">
@@ -345,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hg0-IX-dNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1211" y="2491"/>
+            <point key="canvasLocation" x="-165" y="2263"/>
         </scene>
         <!--My Collection View Controller-->
         <scene sceneID="b52-d8-11D">
@@ -421,10 +422,10 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh0-Tg-8ut" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="554"/>
+            <point key="canvasLocation" x="493" y="-144"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9vw-PF-w01"/>
+        <segue reference="Fss-63-j0g"/>
     </inferredMetricsTieBreakers>
 </document>

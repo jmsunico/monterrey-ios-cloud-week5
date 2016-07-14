@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		FA1DF2521D3626B000C8EDAD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DF2511D3626B000C8EDAD /* DetailsViewController.swift */; };
 		FA1DF2541D3626CA00C8EDAD /* searchISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DF2531D3626CA00C8EDAD /* searchISBNViewController.swift */; };
+		FA2D01F31D37BB39005A7E41 /* Instructions.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA2D01F21D37BB39005A7E41 /* Instructions.rtf */; };
 		FA351FCC1D32879F00EEEF4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA351FCB1D32879F00EEEF4E /* AppDelegate.swift */; };
 		FA351FCE1D32879F00EEEF4E /* myTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA351FCD1D32879F00EEEF4E /* myTableViewController.swift */; };
 		FA351FD11D32879F00EEEF4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA351FCF1D32879F00EEEF4E /* Main.storyboard */; };
-		FA351FD41D32879F00EEEF4E /* openLibrary3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA351FD21D32879F00EEEF4E /* openLibrary3.xcdatamodeld */; };
+		FA351FD41D32879F00EEEF4E /* openLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA351FD21D32879F00EEEF4E /* openLibrary.xcdatamodeld */; };
 		FA351FD61D32879F00EEEF4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA351FD51D32879F00EEEF4E /* Assets.xcassets */; };
 		FA351FD91D32879F00EEEF4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA351FD71D32879F00EEEF4E /* LaunchScreen.storyboard */; };
 		FA351FE11D328A8D00EEEF4E /* myCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA351FE01D328A8D00EEEF4E /* myCollectionViewController.swift */; };
@@ -24,11 +25,12 @@
 /* Begin PBXFileReference section */
 		FA1DF2511D3626B000C8EDAD /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FA1DF2531D3626CA00C8EDAD /* searchISBNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchISBNViewController.swift; sourceTree = "<group>"; };
+		FA2D01F21D37BB39005A7E41 /* Instructions.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Instructions.rtf; sourceTree = "<group>"; };
 		FA351FC81D32879F00EEEF4E /* openLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA351FCB1D32879F00EEEF4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA351FCD1D32879F00EEEF4E /* myTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTableViewController.swift; sourceTree = "<group>"; };
 		FA351FD01D32879F00EEEF4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA351FD31D32879F00EEEF4E /* openLibrary3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = openLibrary3.xcdatamodel; sourceTree = "<group>"; };
+		FA351FD31D32879F00EEEF4E /* openLibrary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = openLibrary.xcdatamodel; sourceTree = "<group>"; };
 		FA351FD51D32879F00EEEF4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA351FD81D32879F00EEEF4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA351FDA1D32879F00EEEF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,9 +80,10 @@
 				FA351FD51D32879F00EEEF4E /* Assets.xcassets */,
 				FA351FD71D32879F00EEEF4E /* LaunchScreen.storyboard */,
 				FA351FDA1D32879F00EEEF4E /* Info.plist */,
-				FA351FD21D32879F00EEEF4E /* openLibrary3.xcdatamodeld */,
+				FA351FD21D32879F00EEEF4E /* openLibrary.xcdatamodeld */,
 				FA351FE01D328A8D00EEEF4E /* myCollectionViewController.swift */,
 				FA351FE61D32FA5300EEEF4E /* sectionHeader.swift */,
+				FA2D01F21D37BB39005A7E41 /* Instructions.rtf */,
 			);
 			path = openLibrary;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2D01F31D37BB39005A7E41 /* Instructions.rtf in Resources */,
 				FA351FD91D32879F00EEEF4E /* LaunchScreen.storyboard in Resources */,
 				FA351FE31D32A65400EEEF4E /* Default-568h@2x.png in Resources */,
 				FA351FD61D32879F00EEEF4E /* Assets.xcassets in Resources */,
@@ -163,7 +167,7 @@
 				FA351FE71D32FA5300EEEF4E /* sectionHeader.swift in Sources */,
 				FA351FCE1D32879F00EEEF4E /* myTableViewController.swift in Sources */,
 				FA1DF2521D3626B000C8EDAD /* DetailsViewController.swift in Sources */,
-				FA351FD41D32879F00EEEF4E /* openLibrary3.xcdatamodeld in Sources */,
+				FA351FD41D32879F00EEEF4E /* openLibrary.xcdatamodeld in Sources */,
 				FA351FCC1D32879F00EEEF4E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,13 +325,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FA351FD21D32879F00EEEF4E /* openLibrary3.xcdatamodeld */ = {
+		FA351FD21D32879F00EEEF4E /* openLibrary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FA351FD31D32879F00EEEF4E /* openLibrary3.xcdatamodel */,
+				FA351FD31D32879F00EEEF4E /* openLibrary.xcdatamodel */,
 			);
-			currentVersion = FA351FD31D32879F00EEEF4E /* openLibrary3.xcdatamodel */;
-			path = openLibrary3.xcdatamodeld;
+			currentVersion = FA351FD31D32879F00EEEF4E /* openLibrary.xcdatamodel */;
+			path = openLibrary.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
