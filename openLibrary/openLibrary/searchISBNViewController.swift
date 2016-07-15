@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchISBNViewController: UIViewController {
-
-	var newSection = Section(isbn: "")
+	
+	var newBook = Section(isbn: "")
 	
 	func gotThat(isbn: String) -> Bool{
-		for index in 0..<sections.count{
-			if isbn == sections[index].isbn{
+		for book in myBooks{
+			if (book.valueForKey("isbn") as! String) == isbn{
 				return true
 			}
 		}
@@ -30,6 +31,7 @@ class SearchISBNViewController: UIViewController {
 	@IBAction func editingEnd(sender: AnyObject) {
 		self.resignFirstResponder()
 	}
+	
 	@IBAction func searchTextField(sender: UITextField) {
 		var newISBN : String? = sender.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
 		if (newISBN != nil) && (newISBN! != ""){
@@ -46,16 +48,16 @@ class SearchISBNViewController: UIViewController {
 				alert.addAction(accion)
 				self.presentViewController(alert, animated: true, completion: nil)
 			} else{
-				newSection = searchISBN(newISBN!)
-				if (newSection.errors == ""){
-					self.isbnLabel.text = "ISBN: " + newSection.isbn
-					self.titleLabel.text = "TÍTULO: " + newSection.title
-					self.authorsLabel.text = "AUTOR(ES): " + newSection.authors
-					self.coverImage.image = newSection.cover
+				newBook = searchISBN(newISBN!)
+				if (newBook.errors == ""){
+					self.isbnLabel.text = "ISBN: " + newBook.isbn
+					self.titleLabel.text = "TÍTULO: " + newBook.title
+					self.authorsLabel.text = "AUTOR(ES): " + newBook.authors
+					self.coverImage.image = newBook.cover
 				}
 				else{
 					//Report ERRORS!!!
-					let alert = UIAlertController(title: "ERRORS!", message: newSection.errors,	preferredStyle: .Alert)
+					let alert = UIAlertController(title: "ERRORS!", message: newBook.errors,	preferredStyle: .Alert)
 					let accion = UIAlertAction(title: "OK", style: .Default, handler: nil)
 					alert.addAction(accion)
 					self.presentViewController(alert, animated: true, completion: nil)
@@ -175,7 +177,8 @@ class SearchISBNViewController: UIViewController {
 			}
 			newSection.keywords = keywords
 		}
-		print(String(jsonAnswer!)) // keep this for testing...
+		newSection.errors = ""
+		self.addButtonView.enabled = true
 		return newSection
 	}
 	
@@ -185,9 +188,45 @@ class SearchISBNViewController: UIViewController {
 	@IBOutlet weak var authorsLabel: UILabel!
 	@IBOutlet weak var coverImage: UIImageView!
 	
+
+	
+	
+	@IBOutlet weak var addButtonView: UIButton!
 	@IBAction func addButton(sender: UIButton) {
-		sections.append(newSection)
-		//segue
+		//Storing newBook in DDBB
+		
+		// firstly, we create the context
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let managedContext = appDelegate.managedObjectContext
+		
+		// secondly, we create the managed object and insert it into the managed context
+		let entity =  NSEntityDescription.entityForName("Book", inManagedObjectContext:managedContext)
+		let bookThere = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+		
+		// thirdly, we update the information in the blank managed object to be stored
+		bookThere.setValue(newBook.isbn, forKey: "isbn")
+		bookThere.setValue(newBook.title, forKey: "title")
+		bookThere.setValue(newBook.authors, forKey: "authors")
+		
+		// ... converting image ...
+
+		bookThere.setValue(UIImagePNGRepresentation(newBook.cover), forKey: "cover")
+		
+		// fourthly, changes are (hopefully) commited into sqlite
+		do {
+			try managedContext.save()
+			
+			// fifthly,
+			myBooks.append(bookThere)   ///not sure of this...
+			
+		} catch let error as NSError  {
+			let alert = UIAlertController(title: "ERRORS!", message: "Could not save \(error), \(error.userInfo)",	preferredStyle: .Alert)
+			let accion = UIAlertAction(title: "OK", style: .Default, handler: nil)
+			alert.addAction(accion)
+			self.presentViewController(alert, animated: true, completion: nil)
+		}
+		
+		// to segue (hopefully)
 	}
 	@IBAction func dismissButton(sender: UIButton) {
 		//Segue
@@ -197,7 +236,7 @@ class SearchISBNViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-		
+		self.addButtonView.enabled = false
     }
 
 

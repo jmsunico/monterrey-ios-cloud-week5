@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15F34" minimumToolsVersion="Automatic">
-    <entity name="Autor" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="writes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Libro" inverseName="writtenBy" inverseEntity="Libro" syncable="YES"/>
-    </entity>
-    <entity name="Libro" syncable="YES">
-        <attribute name="autores" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="isbn" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Book" syncable="YES">
+        <attribute name="authors" attributeType="String" syncable="YES"/>
+        <attribute name="cover" attributeType="Binary" syncable="YES"/>
+        <attribute name="isbn" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="writtenBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Autor" inverseName="writes" inverseEntity="Autor" syncable="YES"/>
     </entity>
+    <fetchRequest name="fetchBook" entity="Book" predicateString="title == $title" includeSubentities="YES" includePropertyValues="YES"/>
+    <fetchRequest name="fetchBooks" entity="Book"/>
     <elements>
-        <element name="Libro" positionX="-36" positionY="9" width="128" height="105"/>
-        <element name="Autor" positionX="0" positionY="45" width="128" height="75"/>
+        <element name="Book" positionX="-36" positionY="9" width="128" height="105"/>
     </elements>
 </model>

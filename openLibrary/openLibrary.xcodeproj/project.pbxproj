@@ -10,13 +10,12 @@
 		FA1DF2521D3626B000C8EDAD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DF2511D3626B000C8EDAD /* DetailsViewController.swift */; };
 		FA1DF2541D3626CA00C8EDAD /* searchISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DF2531D3626CA00C8EDAD /* searchISBNViewController.swift */; };
 		FA2D01F31D37BB39005A7E41 /* Instructions.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA2D01F21D37BB39005A7E41 /* Instructions.rtf */; };
+		FA2D02171D38C10F005A7E41 /* openLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA351FD21D32879F00EEEF4E /* openLibrary.xcdatamodeld */; };
 		FA351FCC1D32879F00EEEF4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA351FCB1D32879F00EEEF4E /* AppDelegate.swift */; };
 		FA351FCE1D32879F00EEEF4E /* myTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA351FCD1D32879F00EEEF4E /* myTableViewController.swift */; };
 		FA351FD11D32879F00EEEF4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA351FCF1D32879F00EEEF4E /* Main.storyboard */; };
-		FA351FD41D32879F00EEEF4E /* openLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA351FD21D32879F00EEEF4E /* openLibrary.xcdatamodeld */; };
 		FA351FD61D32879F00EEEF4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA351FD51D32879F00EEEF4E /* Assets.xcassets */; };
 		FA351FD91D32879F00EEEF4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA351FD71D32879F00EEEF4E /* LaunchScreen.storyboard */; };
-		FA351FE11D328A8D00EEEF4E /* myCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA351FE01D328A8D00EEEF4E /* myCollectionViewController.swift */; };
 		FA351FE31D32A65400EEEF4E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA351FE21D32A65400EEEF4E /* Default-568h@2x.png */; };
 		FA351FE51D32F0E500EEEF4E /* cellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA351FE41D32F0E500EEEF4E /* cellView.swift */; };
 		FA351FE71D32FA5300EEEF4E /* sectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA351FE61D32FA5300EEEF4E /* sectionHeader.swift */; };
@@ -34,7 +33,6 @@
 		FA351FD51D32879F00EEEF4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA351FD81D32879F00EEEF4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA351FDA1D32879F00EEEF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA351FE01D328A8D00EEEF4E /* myCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewController.swift; sourceTree = "<group>"; };
 		FA351FE21D32A65400EEEF4E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FA351FE41D32F0E500EEEF4E /* cellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellView.swift; sourceTree = "<group>"; };
 		FA351FE61D32FA5300EEEF4E /* sectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sectionHeader.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				FA351FD71D32879F00EEEF4E /* LaunchScreen.storyboard */,
 				FA351FDA1D32879F00EEEF4E /* Info.plist */,
 				FA351FD21D32879F00EEEF4E /* openLibrary.xcdatamodeld */,
-				FA351FE01D328A8D00EEEF4E /* myCollectionViewController.swift */,
 				FA351FE61D32FA5300EEEF4E /* sectionHeader.swift */,
 				FA2D01F21D37BB39005A7E41 /* Instructions.rtf */,
 			);
@@ -161,13 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA351FE11D328A8D00EEEF4E /* myCollectionViewController.swift in Sources */,
 				FA351FE51D32F0E500EEEF4E /* cellView.swift in Sources */,
 				FA1DF2541D3626CA00C8EDAD /* searchISBNViewController.swift in Sources */,
 				FA351FE71D32FA5300EEEF4E /* sectionHeader.swift in Sources */,
+				FA2D02171D38C10F005A7E41 /* openLibrary.xcdatamodeld in Sources */,
 				FA351FCE1D32879F00EEEF4E /* myTableViewController.swift in Sources */,
 				FA1DF2521D3626B000C8EDAD /* DetailsViewController.swift in Sources */,
-				FA351FD41D32879F00EEEF4E /* openLibrary.xcdatamodeld in Sources */,
 				FA351FCC1D32879F00EEEF4E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

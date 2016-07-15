@@ -28,6 +28,7 @@ Review criteria
 
 
 import UIKit
+import CoreData
 
 public struct Section{
 	var isbn: String
@@ -45,14 +46,18 @@ public struct Section{
 		self.pubdate = ""
 		self.url = ""
 		self.keywords = ""
-		self.errors = ""
+		self.errors = "Empty object"
 		self.cover = UIImage(named: "pending")!
 	}
 }
 
-public var sections = [Section]()
+public var myBooks = [NSManagedObject]()
 
 class myTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	
+	func data2image (imageData : NSData) -> UIImage {
+		return UIImage(data: imageData)!
+	}
 	
 	@IBAction func addBookButton(sender: UIBarButtonItem) {
 		performSegueWithIdentifier("SearchISBN", sender: UIBarButtonItem.self)
@@ -63,22 +68,41 @@ class myTableViewController: UIViewController, UITableViewDelegate, UITableViewD
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-
-		//tests
-
+		title = "Book list"
+		myTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "BookCell")
+		// Delegates
 		myTableView.dataSource = self
 		myTableView.delegate = self
-		myTableView.reloadData()
-
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		// 1. Prepare context
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let managedContext = appDelegate.managedObjectContext
+		
+		// 2. Recover data from database
+		let fetchRequest = NSFetchRequest(entityName: "Book")
+	
+		// 3. Load data in the managed object
+		do {
+			let results =
+				try managedContext.executeFetchRequest(fetchRequest)
+			myBooks = results as! [NSManagedObject]
+		}
+		catch let error as NSError {
+			print("Could not fetch \(error), \(error.userInfo)")
+		}
 	}
 
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return sections.count
+		return myBooks.count
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("BookCell", forIndexPath: indexPath)
-		cell.textLabel?.text = sections[indexPath.row].title
+		let cell = myTableView.dequeueReusableCellWithIdentifier("BookCell", forIndexPath: indexPath)
+		let thisBook = myBooks[indexPath.row]
+		cell.textLabel!.text =  thisBook.valueForKey("title") as? String
 		return cell
 	}
 	
@@ -99,7 +123,7 @@ class myTableViewController: UIViewController, UITableViewDelegate, UITableViewD
 		else if segue.identifier == "ViewDetails"{
 			let index = sender!.row
 			let viewDetails = segue.destinationViewController as! DetailsViewController
-			viewDetails.sectionIndex = index
+			viewDetails.index = index
 		}
 	}
 }

@@ -9,9 +9,9 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-	var sectionIndex = -1
+	var index : Int = -1
 	
-@IBOutlet weak var isbnLabel: UILabel!
+	@IBOutlet weak var isbnLabel: UILabel!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var authorsLabel: UILabel!
 
@@ -23,18 +23,14 @@ class DetailsViewController: UIViewController {
 		print("pressed return button on detailsView")
 	}
 
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view.
+		print("Showing details of row: ", self.index)
 		
-		print("Showing details of row: ", self.sectionIndex)
-		print(sections[self.sectionIndex])
-		
-		self.isbnLabel.text = (sections[self.sectionIndex]).isbn
-		self.titleLabel.text = (sections[self.sectionIndex]).title
-		self.authorsLabel.text = (sections[self.sectionIndex]).authors
-		self.coverImage.image = (sections[self.sectionIndex]).cover
-    }
+		self.isbnLabel.text = "ISBN:\t" + (myBooks[self.index].valueForKey("isbn") as? String)!
+		self.titleLabel.text = "Título:\t" + (myBooks[self.index].valueForKey("title") as? String)!
+		self.authorsLabel.text = "Autor(es):\t" + (myBooks[self.index].valueForKey("authors") as? String)!
+		self.coverImage.image = UIImage(data: (myBooks[self.index].valueForKey("cover") as? NSData)!)
+	}
 }
